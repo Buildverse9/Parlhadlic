@@ -103,11 +103,18 @@ body {
   transform: translateX(0);
 }
 
-/* Shimmer Gold Badge Effect */
+/* Shimmer Gold Badge Effect with High-Contrast Dark Text */
 .shimmer-gold {
-  background: linear-gradient(90deg, #F9F3DC 0%, #F5E6B3 50%, #F9F3DC 100%);
+  background: linear-gradient(90deg, #FBF4DC 0%, #F5E6B3 50%, #FBF4DC 100%);
   background-size: 200% 100%;
   animation: goldShimmer 3.5s infinite linear;
+  color: #071913 !important;
+}
+
+.shimmer-gold span,
+.shimmer-gold i {
+  color: #071913 !important;
+  font-weight: 800;
 }
 
 @keyframes goldShimmer {
