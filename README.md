@@ -120,12 +120,13 @@ Pralhadlic/
         ├── emblem.svg          # Official Section 37 Sovereign Guarantee Gold Seal
         ├── hero-family.svg     # Family financial protection vector illustration
         ├── child-education.svg # Child education graduation illustration
-        ├── retirement.svg      # Peaceful retirement illustration
+        ├── retirement.svg     # Peaceful retirement illustration
         ├── wealth-growth.svg   # Compounding wealth growth illustration
         └── favicon.svg         # Browser tab icon
 ```
 
 ---
+
 
 ## ⚖️ Statutory Note
 *Life Insurance Corporation of India (LIC) is backed by the Government of India under Section 37 of the LIC Act, 1956. This website is tailored for licensed Life Insurance Advisors to present official plan information and calculate benefit illustrations.*
