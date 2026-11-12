@@ -18,7 +18,7 @@ Because this website is built with pure, modern web standards and relative links
 
 ### Method 1: Using Git Terminal (Recommended)
 
-1. Open PowerShell or Command Prompt in this folder (`D:\Users Profiles\Yesh\Downloads\Pralhadlic`):
+1. Open PowerShell or Command Prompt in this folder (`D:\Users Profiles\Yesh\Downloads\Pralhadlic\Parlhadlic`):
    ```powershell
    git init
    git add .
