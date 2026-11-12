@@ -6,19 +6,19 @@ const SITE_CONFIG = {
   // Advisor Details
   advisorName: "Pralhad",
   advisorFullName: "Pralhad - Senior Life Insurance Advisor",
-  agencyCode: "03458921",
+  agencyCode: "000000",
   branchName: "Branch Office 883, Division I",
   division: "Division Office",
   experienceYears: "15+",
-  satisfiedFamilies: "2,500+",
+  satisfiedFamilies: "1,000+",
   claimsSettledPercent: "98.5%",
   sovereignGuaranteeYear: "1956",
 
   // Contact Information
-  phone: "+91 98765 43210",
-  whatsappNumber: "919876543210", // Format: country code without + or spaces (for wa.me)
-  email: "pralhad.licadvisor@gmail.com",
-  officeAddress: "Office No. 104, LIC Advisory Center, Main Market Road",
+  phone: "+91 92213 09638",
+  whatsappNumber: "919221309638", // Format: country code without + or spaces (for wa.me)
+  email: "xyz@gmail.com",
+  officeAddress: "xyz address",
   city: "City Center",
   workingHours: "Mon - Sat: 9:00 AM - 8:00 PM (Sunday by Appointment)",
 
@@ -26,10 +26,8 @@ const SITE_CONFIG = {
   services: [
     "Doorstep Documentation & Free KYC Pickup",
     "Personalized Financial Goal Planning (Child Education, Marriage, Retirement)",
-    "Hassle-Free Death & Maturity Claim Settlement Assistance",
     "Policy Revival & Address / Nomination Updates",
     "Triple Tax-Saving Consultation under Sec 80C & 10(10D)",
-    "Free Life Insurance Portfolio Health Checkup"
   ],
 
   // Social & Web Links
@@ -37,12 +35,12 @@ const SITE_CONFIG = {
     facebook: "https://facebook.com",
     instagram: "https://instagram.com",
     linkedin: "https://linkedin.com",
-    whatsapp: "https://wa.me/919876543210"
+    whatsapp: "https://wa.me/9221309638"
   },
 
   // Trust Badges & Metrics
   stats: [
-    { label: "Families Protected", value: "2,500+" },
+    { label: "Families Protected", value: "1,000+" },
     { label: "Claims Settled", value: "98.5%" },
     { label: "Years Experience", value: "15+ Yrs" },
     { label: "Govt Sovereign Guarantee", value: "100%" }

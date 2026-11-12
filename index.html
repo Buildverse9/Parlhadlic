@@ -7,10 +7,10 @@
   <meta name="description" content="Explore verified active LIC of India plans categorized. Calculate exact premiums, milestone payouts, and maturity returns. Backed by Section 37 Sovereign Guarantee. Contact Senior Advisor Pralhad.">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts: Inter & Noto Sans Devanagari -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -33,10 +33,20 @@
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
       <div class="flex items-center space-x-2 text-center sm:text-left">
         <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="text-amber-300 font-bold uppercase tracking-wider text-[11px]">Sovereign Guarantee:</span>
-        <span class="text-stone-300 text-[11px]">100% Sum Assured & Declared Bonuses Guaranteed by Central Govt (Sec 37, LIC Act 1956)</span>
+        <span class="text-amber-300 font-bold uppercase tracking-wider text-[11px]" data-i18n="sovereign_guarantee_badge">Sovereign Guarantee:</span>
+        <span class="text-stone-300 text-[11px]" data-i18n="sovereign_guarantee_text">100% Sum Assured & Declared Bonuses Guaranteed by Central Govt (Sec 37, LIC Act 1956)</span>
       </div>
-      <div class="flex items-center space-x-4 text-[11px]">
+      <div class="flex items-center space-x-3 text-[11px]">
+        <!-- Language Switcher in Top Bar -->
+        <div class="flex items-center space-x-1.5 bg-[#0C281E] px-2.5 py-1 rounded-lg border border-amber-400/40 text-amber-200">
+          <i data-lucide="globe" class="w-3.5 h-3.5 text-amber-300"></i>
+          <select id="lang-select-top" onchange="switchLanguage(this.value)" class="bg-transparent text-amber-200 font-bold text-[11px] focus:outline-none cursor-pointer">
+            <option value="en" class="bg-[#0C281E] text-stone-100">English</option>
+            <option value="mr" class="bg-[#0C281E] text-stone-100">मराठी (Marathi)</option>
+            <option value="hi" class="bg-[#0C281E] text-stone-100">हिंदी (Hindi)</option>
+          </select>
+        </div>
+        <span class="text-stone-600">|</span>
         <a href="tel:+919876543210" class="advisor-call-link hover:text-amber-300 transition flex items-center space-x-1">
           <i data-lucide="phone-call" class="w-3.5 h-3.5 text-amber-400"></i>
           <span data-config="phone">+91 98765 43210</span>
@@ -44,10 +54,10 @@
         <span class="text-stone-600">|</span>
         <span class="text-emerald-400 font-semibold flex items-center space-x-1">
           <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span>98.5%+ Claim Ratio</span>
+          <span data-i18n="claim_ratio">98.5%+ Claim Ratio</span>
         </span>
         <span class="text-stone-600 hidden md:inline">|</span>
-        <span class="text-stone-300 hidden md:inline">Free Doorstep Consultation</span>
+        <span class="text-stone-300 hidden md:inline" data-i18n="doorstep_service">Free Doorstep Consultation</span>
       </div>
     </div>
   </div>
@@ -66,7 +76,7 @@
           <div>
             <div class="flex items-center space-x-2">
               <span class="font-black text-lg text-stone-900 tracking-tight" data-config="advisorName">PRALHAD</span>
-              <span class="text-[11px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-900 font-bold border border-amber-300">AUTHORIZED LIC ADVISOR</span>
+              <span class="text-[11px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-900 font-bold border border-amber-300" data-i18n="authorized_advisor">AUTHORIZED LIC ADVISOR</span>
             </div>
             <p class="text-[11px] text-stone-500 font-medium tracking-wide">
               Life Insurance Corporation of India • <span data-config="branchName">Branch Office 883</span>
@@ -75,32 +85,50 @@
         </a>
 
         <!-- Desktop Navigation Links -->
-        <nav class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-stone-700">
-          <a href="#plans-section" class="hover:text-emerald-800 transition">LIC Plans</a>
+        <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-stone-700">
+          <a href="#plans-section" class="hover:text-emerald-800 transition" data-i18n="nav_plans">LIC Plans</a>
           <a href="#calculator-section" class="hover:text-emerald-800 transition flex items-center space-x-1 text-emerald-950 font-bold">
             <i data-lucide="calculator" class="w-4 h-4 text-amber-600"></i>
-            <span>Maturity Calculator</span>
+            <span data-i18n="nav_calculator">Maturity Calculator</span>
           </a>
-          <a href="#pitch-section" class="hover:text-emerald-800 transition">Why LIC (Truth vs FDs)</a>
-          <a href="#goals-section" class="hover:text-emerald-800 transition">Goal Matcher</a>
-          <a href="#about-section" class="hover:text-emerald-800 transition">About Pralhad</a>
-          <a href="#faqs-section" class="hover:text-emerald-800 transition">FAQs</a>
+          <a href="#pitch-section" class="hover:text-emerald-800 transition" data-i18n="nav_why_lic">Why LIC (Truth vs FDs)</a>
+          <a href="#goals-section" class="hover:text-emerald-800 transition" data-i18n="nav_goals">Goal Matcher</a>
+          <a href="#about-section" class="hover:text-emerald-800 transition" data-i18n="nav_about">About Pralhad</a>
+          <a href="#faqs-section" class="hover:text-emerald-800 transition" data-i18n="nav_faqs">FAQs</a>
         </nav>
 
-        <!-- Right Quick CTAs -->
-        <div class="hidden sm:flex items-center space-x-3">
-          <a href="#calculator-section" class="bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-bold py-2.5 px-4 rounded-xl transition border border-stone-200">
+        <!-- Right Quick CTAs + Language Selector -->
+        <div class="hidden sm:flex items-center space-x-2.5">
+          <!-- Desktop Language Selector -->
+          <div class="flex items-center bg-white border border-amber-300/80 rounded-xl px-2.5 py-1.5 shadow-sm text-stone-800">
+            <i data-lucide="languages" class="w-4 h-4 text-emerald-800 mr-1.5"></i>
+            <select id="lang-select-nav" onchange="switchLanguage(this.value)" class="bg-transparent text-stone-900 font-bold text-xs focus:outline-none cursor-pointer">
+              <option value="en">English</option>
+              <option value="mr">मराठी (Marathi)</option>
+              <option value="hi">हिंदी (Hindi)</option>
+            </select>
+          </div>
+
+          <a href="#calculator-section" class="bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-bold py-2.5 px-3.5 rounded-xl transition border border-stone-200" data-i18n="nav_calc_btn">
             Calculate Returns
           </a>
-          <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="advisor-wa-link bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 px-4 rounded-xl shadow-sm hover:shadow transition flex items-center space-x-1.5 whatsapp-pulse">
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="advisor-wa-link bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 px-3.5 rounded-xl shadow-sm hover:shadow transition flex items-center space-x-1.5 whatsapp-pulse">
             <i data-lucide="message-circle" class="w-4 h-4"></i>
-            <span>WhatsApp Pralhad</span>
+            <span data-i18n="nav_wa_btn">WhatsApp Pralhad</span>
           </a>
         </div>
 
-        <!-- Mobile Menu Toggle Button -->
-        <div class="lg:hidden flex items-center">
-          <button id="mobile-menu-toggle" class="p-2 rounded-lg text-stone-700 hover:text-stone-900 hover:bg-stone-100 focus:outline-none">
+        <!-- Mobile Menu Toggle & Header Language Selector -->
+        <div class="lg:hidden flex items-center space-x-2">
+          <div class="flex items-center bg-white border border-amber-300 rounded-xl px-2 py-1 shadow-sm">
+            <i data-lucide="globe" class="w-3.5 h-3.5 text-emerald-800 mr-1"></i>
+            <select id="lang-select-header-mobile" onchange="switchLanguage(this.value)" class="bg-transparent text-stone-900 font-bold text-xs focus:outline-none cursor-pointer">
+              <option value="en">EN</option>
+              <option value="mr">मराठी</option>
+              <option value="hi">हिंदी</option>
+            </select>
+          </div>
+          <button id="mobile-menu-toggle" class="p-2 rounded-xl text-stone-700 hover:text-stone-900 hover:bg-stone-100 focus:outline-none" aria-label="Toggle Navigation Menu">
             <i data-lucide="menu" class="w-6 h-6"></i>
           </button>
         </div>
@@ -109,20 +137,33 @@
 
     <!-- Mobile Navigation Dropdown -->
     <div id="mobile-nav-dropdown" class="hidden lg:hidden border-t border-stone-200 bg-[#FAF9F5] px-4 pt-3 pb-6 space-y-3 text-sm font-semibold text-stone-800 shadow-lg">
-      <a href="#plans-section" class="block py-2 hover:text-emerald-800">All LIC Plans Categorized</a>
+      <!-- Mobile Language Selector -->
+      <div class="pb-2 border-b border-stone-200">
+        <label class="block text-xs font-bold text-stone-600 mb-1">भाषा निवडा / भाषा चुनें / Language:</label>
+        <div class="flex items-center bg-white border border-amber-300 rounded-xl px-3 py-2">
+          <i data-lucide="globe" class="w-4 h-4 text-emerald-800 mr-2"></i>
+          <select id="lang-select-mobile" onchange="switchLanguage(this.value)" class="w-full bg-transparent text-stone-900 font-bold text-sm focus:outline-none">
+            <option value="en">English (इंग्रजी)</option>
+            <option value="mr">मराठी (Marathi)</option>
+            <option value="hi">हिंदी (Hindi)</option>
+          </select>
+        </div>
+      </div>
+
+      <a href="#plans-section" class="block py-2 hover:text-emerald-800" data-i18n="nav_plans">All LIC Plans Categorized</a>
       <a href="#calculator-section" class="block py-2 text-amber-800 font-bold flex items-center space-x-2">
         <i data-lucide="calculator" class="w-4 h-4"></i>
-        <span>Maturity & Returns Calculator</span>
+        <span data-i18n="nav_calculator">Maturity & Returns Calculator</span>
       </a>
-      <a href="#pitch-section" class="block py-2 hover:text-emerald-800">Why Buy LIC (Sovereign Guarantee & Facts)</a>
-      <a href="#goals-section" class="block py-2 hover:text-emerald-800">Financial Goal Matcher</a>
-      <a href="#about-section" class="block py-2 hover:text-emerald-800">About Advisor Pralhad</a>
-      <a href="#faqs-section" class="block py-2 hover:text-emerald-800">Customer FAQs</a>
-      <a href="#contact-section" class="block py-2 hover:text-emerald-800">Book Free Doorstep Consultation</a>
+      <a href="#pitch-section" class="block py-2 hover:text-emerald-800" data-i18n="nav_why_lic">Why Buy LIC (Sovereign Guarantee & Facts)</a>
+      <a href="#goals-section" class="block py-2 hover:text-emerald-800" data-i18n="nav_goals">Financial Goal Matcher</a>
+      <a href="#about-section" class="block py-2 hover:text-emerald-800" data-i18n="nav_about">About Advisor Pralhad</a>
+      <a href="#faqs-section" class="block py-2 hover:text-emerald-800" data-i18n="nav_faqs">Customer FAQs</a>
+      <a href="#contact-section" class="block py-2 hover:text-emerald-800" data-i18n="doorstep_service">Book Free Doorstep Consultation</a>
       <div class="pt-2 border-t border-stone-200 flex flex-col gap-2">
         <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="advisor-wa-link w-full bg-emerald-600 text-white text-center py-2.5 rounded-xl text-xs font-bold flex items-center justify-center space-x-2">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
-          <span>Direct WhatsApp Consultation</span>
+          <span data-i18n="nav_wa_btn">Direct WhatsApp Consultation</span>
         </a>
       </div>
     </div>
@@ -144,34 +185,34 @@
           <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
             <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-amber-400/90 text-[#071913] text-xs font-black shadow-sm shimmer-gold">
               <i data-lucide="award" class="w-4 h-4 text-[#071913]"></i>
-              <span class="text-[#071913] font-black tracking-wide">Authorized LIC of India Advisory Practice</span>
+              <span class="text-[#071913] font-black tracking-wide" data-i18n="hero_badge">Authorized LIC of India Advisory Practice</span>
             </div>
 
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight">
-              Build Wealth With <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-300">100% Sovereign-Guaranteed</span> Safety.
+              <span data-i18n="hero_title_1">Build Wealth With </span><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-300" data-i18n="hero_title_highlight">100% Sovereign-Guaranteed</span><span data-i18n="hero_title_2"> Safety.</span>
             </h1>
 
-            <p class="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            <p class="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed" data-i18n="hero_subhead">
               No market volatility, no bank default risk. Lock in contractually guaranteed cashflows, lifelong income, and tax-free payouts backed by the Parliament of India under Section 37 of the LIC Act.
             </p>
 
             <!-- 4 Quick Verified Pillars -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-left">
               <div class="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-sm">
-                <span class="text-amber-300 text-lg font-black block">100%</span>
-                <span class="text-xs text-stone-300 font-medium">Govt Sovereign Guarantee</span>
+                <span class="text-amber-300 text-lg font-black block" data-i18n="hero_stat_1_val">100%</span>
+                <span class="text-xs text-stone-300 font-medium" data-i18n="hero_stat_1_lbl">Govt Sovereign Guarantee</span>
               </div>
               <div class="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-sm">
-                <span class="text-emerald-400 text-lg font-black block">98.5%+</span>
-                <span class="text-xs text-stone-300 font-medium">Claim Settlement Ratio</span>
+                <span class="text-emerald-400 text-lg font-black block" data-i18n="hero_stat_2_val">98.5%+</span>
+                <span class="text-xs text-stone-300 font-medium" data-i18n="hero_stat_2_lbl">Claim Settlement Ratio</span>
               </div>
               <div class="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-sm">
-                <span class="text-amber-300 text-lg font-black block">100%</span>
-                <span class="text-xs text-stone-300 font-medium">Tax-Free (Sec 10(10D))</span>
+                <span class="text-amber-300 text-lg font-black block" data-i18n="hero_stat_3_val">100%</span>
+                <span class="text-xs text-stone-300 font-medium" data-i18n="hero_stat_3_lbl">Tax-Free (Sec 10(10D))</span>
               </div>
               <div class="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-sm">
-                <span class="text-stone-200 text-lg font-black block">2,500+</span>
-                <span class="text-xs text-stone-300 font-medium">Families Protected</span>
+                <span class="text-stone-200 text-lg font-black block" data-i18n="hero_stat_4_val">2,500+</span>
+                <span class="text-xs text-stone-300 font-medium" data-i18n="hero_stat_4_lbl">Families Protected</span>
               </div>
             </div>
 
@@ -179,11 +220,11 @@
             <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <a href="#calculator-section" class="w-full sm:w-auto bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-stone-950 font-black text-sm py-4 px-8 rounded-2xl shadow-lg hover:shadow-amber-400/20 transition flex items-center justify-center space-x-2">
                 <i data-lucide="calculator" class="w-5 h-5"></i>
-                <span>Calculate Your Exact Maturity Returns</span>
+                <span data-i18n="hero_calc_cta">Calculate Your Exact Maturity Returns</span>
               </a>
               <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="advisor-wa-link w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm py-4 px-8 rounded-2xl shadow-lg transition flex items-center justify-center space-x-2">
                 <i data-lucide="message-circle" class="w-5 h-5"></i>
-                <span>Get Instant Quotation on WhatsApp</span>
+                <span data-i18n="hero_wa_cta">Get Instant Quotation on WhatsApp</span>
               </a>
             </div>
 
@@ -192,8 +233,8 @@
               <div class="w-8 h-8 rounded-full bg-[#164232] text-amber-300 flex items-center justify-center font-bold text-xs border border-amber-400/50">
                 P
               </div>
-              <p>
-                Guaranteed personal doorstep guidance by <strong class="text-white">Advisor Pralhad</strong>. Zero hidden service fees.
+              <p data-i18n="hero_trust_sign">
+                Guaranteed personal doorstep guidance by Advisor Pralhad. Zero hidden service fees.
               </p>
             </div>
           </div>
@@ -215,13 +256,13 @@
     <section id="goals-section" class="py-16 bg-[#FAF9F5] border-b border-stone-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-12">
-          <span class="text-xs font-bold text-[#0C281E] uppercase tracking-widest bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200">
+          <span class="text-xs font-bold text-[#0C281E] uppercase tracking-widest bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200" data-i18n="goals_tag">
             Interactive Goal Matcher
           </span>
-          <h2 class="text-2xl sm:text-3xl font-black text-stone-900 mt-2">
+          <h2 class="text-2xl sm:text-3xl font-black text-stone-900 mt-2" data-i18n="goals_title">
             What Is Your Most Important Financial Objective?
           </h2>
-          <p class="text-stone-600 text-sm mt-2">
+          <p class="text-stone-600 text-sm mt-2" data-i18n="goals_desc">
             Click on your priority goal to view the recommended plan and launch its calculator instantly.
           </p>
         </div>
@@ -233,15 +274,15 @@
               <div class="w-14 h-14 mx-auto bg-amber-50 text-amber-800 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition border border-amber-200">
                 <i data-lucide="graduation-cap" class="w-7 h-7"></i>
               </div>
-              <h3 class="text-lg font-bold text-stone-900">Child's Higher Studies</h3>
-              <p class="text-xs text-stone-600 mt-2 leading-relaxed">
+              <h3 class="text-lg font-bold text-stone-900" data-i18n="goal_1_title">Child's Higher Studies</h3>
+              <p class="text-xs text-stone-600 mt-2 leading-relaxed" data-i18n="goal_1_desc">
                 Ensure graduation/MBBS/wedding funds are 100% guaranteed even if you are not around tomorrow.
               </p>
               <div class="mt-4 inline-block px-3 py-1 rounded-full bg-[#0C281E] text-amber-200 text-[11px] font-bold">
                 Jeevan Lakshya (933) / Amritbaal (874)
               </div>
             </div>
-            <button data-goal-plan="933" class="mt-6 w-full bg-[#0C281E] hover:bg-[#164232] text-amber-200 text-xs font-bold py-2.5 rounded-xl transition">
+            <button data-goal-plan="933" class="mt-6 w-full bg-[#0C281E] hover:bg-[#164232] text-amber-200 text-xs font-bold py-2.5 rounded-xl transition" data-i18n="goal_1_btn">
               Calculate Child Fund
             </button>
           </div>
@@ -252,15 +293,15 @@
               <div class="w-14 h-14 mx-auto bg-emerald-50 text-emerald-800 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition border border-emerald-200">
                 <i data-lucide="infinity" class="w-7 h-7"></i>
               </div>
-              <h3 class="text-lg font-bold text-stone-900">Lifelong Guaranteed Income</h3>
-              <p class="text-xs text-stone-600 mt-2 leading-relaxed">
+              <h3 class="text-lg font-bold text-stone-900" data-i18n="goal_2_title">Lifelong Guaranteed Income</h3>
+              <p class="text-xs text-stone-600 mt-2 leading-relaxed" data-i18n="goal_2_desc">
                 Receive 10% or 8% guaranteed cash directly into your bank every year for life, plus capital back to family.
               </p>
               <div class="mt-4 inline-block px-3 py-1 rounded-full bg-[#0C281E] text-amber-200 text-[11px] font-bold">
                 Jeevan Utsav (871) / Umang (945)
               </div>
             </div>
-            <button data-goal-plan="871" class="mt-6 w-full bg-[#0C281E] hover:bg-[#164232] text-amber-200 text-xs font-bold py-2.5 rounded-xl transition">
+            <button data-goal-plan="871" class="mt-6 w-full bg-[#0C281E] hover:bg-[#164232] text-amber-200 text-xs font-bold py-2.5 rounded-xl transition" data-i18n="goal_2_btn">
               Calculate Lifelong Income
             </button>
           </div>
@@ -271,15 +312,15 @@
               <div class="w-14 h-14 mx-auto bg-amber-50 text-amber-800 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition border border-amber-200">
                 <i data-lucide="trending-up" class="w-7 h-7"></i>
               </div>
-              <h3 class="text-lg font-bold text-stone-900">Limited-Pay High Bonus</h3>
-              <p class="text-xs text-stone-600 mt-2 leading-relaxed">
+              <h3 class="text-lg font-bold text-stone-900" data-i18n="goal_3_title">Limited-Pay High Bonus</h3>
+              <p class="text-xs text-stone-600 mt-2 leading-relaxed" data-i18n="goal_3_desc">
                 Pay premiums for a limited period (10, 15, or 16 yrs) and reap high compounding reversionary bonuses.
               </p>
               <div class="mt-4 inline-block px-3 py-1 rounded-full bg-[#0C281E] text-amber-200 text-[11px] font-bold">
                 Jeevan Labh (936)
               </div>
             </div>
-            <button data-goal-plan="936" class="mt-6 w-full bg-[#0C281E] hover:bg-[#164232] text-amber-200 text-xs font-bold py-2.5 rounded-xl transition">
+            <button data-goal-plan="936" class="mt-6 w-full bg-[#0C281E] hover:bg-[#164232] text-amber-200 text-xs font-bold py-2.5 rounded-xl transition" data-i18n="goal_3_btn">
               Calculate Wealth Multiplier
             </button>
           </div>
@@ -290,15 +331,15 @@
               <div class="w-14 h-14 mx-auto bg-stone-100 text-stone-800 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition border border-stone-300">
                 <i data-lucide="shield-alert" class="w-7 h-7 text-emerald-800"></i>
               </div>
-              <h3 class="text-lg font-bold text-stone-900">₹1 Cr+ Pure Protection</h3>
-              <p class="text-xs text-stone-600 mt-2 leading-relaxed">
+              <h3 class="text-lg font-bold text-stone-900" data-i18n="goal_4_title">₹1 Cr+ Pure Protection</h3>
+              <p class="text-xs text-stone-600 mt-2 leading-relaxed" data-i18n="goal_4_desc">
                 Shield home loans and your family's future with maximum financial replacement at just ₹25 - ₹35/day.
               </p>
               <div class="mt-4 inline-block px-3 py-1 rounded-full bg-[#0C281E] text-amber-200 text-[11px] font-bold">
                 Tech Term (854) / Yuva Term (875)
               </div>
             </div>
-            <button data-goal-plan="854" class="mt-6 w-full bg-[#0C281E] hover:bg-[#164232] text-amber-200 text-xs font-bold py-2.5 rounded-xl transition">
+            <button data-goal-plan="854" class="mt-6 w-full bg-[#0C281E] hover:bg-[#164232] text-amber-200 text-xs font-bold py-2.5 rounded-xl transition" data-i18n="goal_4_btn">
               Calculate ₹1 Cr Cover
             </button>
           </div>
@@ -314,13 +355,13 @@
         
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-10">
-          <span class="text-xs font-bold text-amber-300 uppercase tracking-widest bg-amber-400/10 border border-amber-400/30 px-3 py-1 rounded-full">
+          <span class="text-xs font-bold text-amber-300 uppercase tracking-widest bg-amber-400/10 border border-amber-400/30 px-3 py-1 rounded-full" data-i18n="calc_tag">
             Verified Returns & Cashflow Engine
           </span>
-          <h2 class="text-2xl sm:text-4xl font-black text-white mt-2">
+          <h2 class="text-2xl sm:text-4xl font-black text-white mt-2" data-i18n="calc_title">
             How Much Money Will You Get In How Many Years?
           </h2>
-          <p class="text-stone-300 text-sm mt-2">
+          <p class="text-stone-300 text-sm mt-2" data-i18n="calc_desc">
             Calculate your exact installment premiums, daily equivalent savings, bonus accruals, survival payouts, and 100% tax-free maturity amount.
           </p>
         </div>
@@ -331,12 +372,12 @@
           <div class="lg:col-span-5 bg-[#071913]/90 border border-[#1B4232] rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl backdrop-blur-md">
             <h3 class="text-lg font-extrabold text-amber-200 flex items-center space-x-2 border-b border-[#1B4232] pb-3">
               <i data-lucide="sliders" class="w-5 h-5 text-amber-400"></i>
-              <span>Customize Policy Parameters</span>
+              <span data-i18n="calc_box_title">Customize Policy Parameters</span>
             </h3>
 
             <!-- 1. Select Plan -->
             <div>
-              <label for="calc-plan-select" class="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-2">
+              <label for="calc-plan-select" class="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-2" data-i18n="calc_lbl_plan">
                 1. Select LIC Policy
               </label>
               <select id="calc-plan-select" class="w-full bg-[#0C281E] border border-[#1B4232] rounded-xl px-4 py-3 text-sm text-white font-semibold focus:outline-none focus:border-amber-400">
@@ -348,7 +389,7 @@
             <!-- 2. Entry Age -->
             <div>
               <div class="flex justify-between items-center mb-2">
-                <label for="calc-age-input" class="text-xs font-bold text-stone-300 uppercase tracking-wider">
+                <label for="calc-age-input" class="text-xs font-bold text-stone-300 uppercase tracking-wider" data-i18n="calc_lbl_age">
                   2. Entry Age
                 </label>
                 <div class="flex items-center space-x-1">
@@ -367,7 +408,7 @@
             <!-- 3. Desired Sum Assured -->
             <div>
               <div class="flex justify-between items-center mb-2">
-                <label for="calc-sa-input" class="text-xs font-bold text-stone-300 uppercase tracking-wider">
+                <label for="calc-sa-input" class="text-xs font-bold text-stone-300 uppercase tracking-wider" data-i18n="calc_lbl_sa">
                   3. Basic Sum Assured (Life Cover)
                 </label>
                 <div class="flex items-center space-x-1">
@@ -388,9 +429,9 @@
             </div>
 
             <!-- 4. Term & PPT / Frequency -->
-            <div class="grid grid-cols-2 gap-3">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label for="calc-term-select" class="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-2">
+                <label for="calc-term-select" class="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-2" data-i18n="calc_lbl_term">
                   4. Term & PPT
                 </label>
                 <select id="calc-term-select" class="w-full bg-[#0C281E] border border-[#1B4232] rounded-xl px-3 py-2.5 text-xs text-white font-semibold focus:outline-none focus:border-amber-400">
@@ -398,14 +439,14 @@
                 </select>
               </div>
               <div>
-                <label for="calc-mode-select" class="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-2">
+                <label for="calc-mode-select" class="block text-xs font-bold text-stone-300 uppercase tracking-wider mb-2" data-i18n="calc_lbl_mode">
                   5. Payment Mode
                 </label>
                 <select id="calc-mode-select" class="w-full bg-[#0C281E] border border-[#1B4232] rounded-xl px-3 py-2.5 text-xs text-white font-semibold focus:outline-none focus:border-amber-400">
-                  <option value="Yearly">Yearly (2% Rebate)</option>
-                  <option value="Half-Yearly">Half-Yearly (1% Rebate)</option>
-                  <option value="Quarterly">Quarterly</option>
-                  <option value="Monthly (NACH)">Monthly (NACH)</option>
+                  <option value="Yearly" data-i18n="calc_mode_yearly">Yearly (2% Rebate)</option>
+                  <option value="Half-Yearly" data-i18n="calc_mode_half_yearly">Half-Yearly (1% Rebate)</option>
+                  <option value="Quarterly" data-i18n="calc_mode_quarterly">Quarterly</option>
+                  <option value="Monthly (NACH)" data-i18n="calc_mode_monthly">Monthly (NACH)</option>
                 </select>
               </div>
             </div>
@@ -413,7 +454,7 @@
             <!-- Statutory Transparency Note -->
             <div class="p-3 bg-[#133327] border border-amber-400/20 rounded-xl text-xs text-stone-300">
               <span class="font-bold text-amber-300 block mb-0.5">⚖️ Official Disclosure:</span>
-              Reversionary bonuses are calculated using latest declared annual valuation surplus rates. Guaranteed plans (Utsav, Bima Jyoti, Amritbaal) reflect 100% contractual guarantees in the policy bond.
+              <span data-i18n="calc_disclosure">Reversionary bonuses are calculated using latest declared annual valuation surplus rates. Guaranteed plans (Utsav, Bima Jyoti, Amritbaal) reflect 100% contractual guarantees in the policy bond.</span>
             </div>
           </div>
 
@@ -423,14 +464,14 @@
             <div class="bg-gradient-to-br from-[#071913] to-[#0C281E] border border-[#1B4232] rounded-2xl p-6 sm:p-8 shadow-xl">
               <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 border-b border-[#1B4232] gap-2">
                 <div>
-                  <span class="text-xs font-bold uppercase tracking-wider text-stone-400">Total Estimated Maturity & Survival Payouts</span>
+                  <span class="text-xs font-bold uppercase tracking-wider text-stone-400" data-i18n="calc_total_label">Total Estimated Maturity & Survival Payouts</span>
                   <div class="flex items-baseline space-x-3 mt-1">
                     <span id="calc-total-returns" class="text-3xl sm:text-4xl font-black text-amber-300">₹0</span>
                     <span id="calc-multiple" class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-extrabold border border-emerald-400/40">2.4x Return</span>
                   </div>
                 </div>
                 <div class="text-left sm:text-right">
-                  <span class="text-xs text-stone-400 block">Daily Savings Equivalent:</span>
+                  <span class="text-xs text-stone-400 block" data-i18n="calc_daily_label">Daily Savings Equivalent:</span>
                   <span id="calc-daily" class="text-lg font-black text-emerald-400">Just ₹0 / day</span>
                 </div>
               </div>
@@ -441,32 +482,32 @@
               <!-- Metrics Matrix -->
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 my-5 text-xs">
                 <div class="p-3 bg-[#0B1E16] border border-[#1B4232] rounded-xl">
-                  <span class="text-stone-400 block text-[10px] uppercase font-bold">1st Year Installment</span>
+                  <span class="text-stone-400 block text-[10px] uppercase font-bold" data-i18n="calc_col_1st_yr">1st Year Installment</span>
                   <span id="calc-first-year" class="font-bold text-white text-sm">₹0</span>
                   <span class="text-[10px] text-stone-500 block">incl. 4.5% GST</span>
                 </div>
                 <div class="p-3 bg-[#0B1E16] border border-[#1B4232] rounded-xl">
-                  <span class="text-stone-400 block text-[10px] uppercase font-bold">Renewal Installment</span>
+                  <span class="text-stone-400 block text-[10px] uppercase font-bold" data-i18n="calc_col_renewal">Renewal Installment</span>
                   <span id="calc-renewal" class="font-bold text-white text-sm">₹0</span>
                   <span class="text-[10px] text-stone-500 block">incl. 2.25% GST</span>
                 </div>
                 <div class="p-3 bg-[#0B1E16] border border-[#1B4232] rounded-xl">
-                  <span class="text-stone-400 block text-[10px] uppercase font-bold">Total Investment</span>
+                  <span class="text-stone-400 block text-[10px] uppercase font-bold" data-i18n="calc_col_total_invest">Total Investment</span>
                   <span id="calc-total-invest" class="font-bold text-amber-300 text-sm">₹0</span>
                   <span class="text-[10px] text-stone-500 block">Over Premium Term</span>
                 </div>
                 <div class="p-3 bg-[#0B1E16] border border-[#1B4232] rounded-xl">
-                  <span id="calc-bonus-label" class="text-stone-400 block text-[10px] uppercase font-bold">Accrued Bonus / GA</span>
+                  <span id="calc-bonus-label" class="text-stone-400 block text-[10px] uppercase font-bold" data-i18n="calc_col_accrued_bonus">Accrued Bonus / GA</span>
                   <span id="calc-bonus-accrued" class="font-bold text-white text-sm">₹0</span>
                   <span class="text-[10px] text-stone-500 block">Cumulative Addition</span>
                 </div>
                 <div class="p-3 bg-[#0B1E16] border border-[#1B4232] rounded-xl">
-                  <span class="text-stone-400 block text-[10px] uppercase font-bold">Final Addl. Bonus (FAB)</span>
+                  <span class="text-stone-400 block text-[10px] uppercase font-bold" data-i18n="calc_col_fab">Final Addl. Bonus (FAB)</span>
                   <span id="calc-fab" class="font-bold text-white text-sm">₹0</span>
                   <span class="text-[10px] text-stone-500 block">Maturity lump-sum top-up</span>
                 </div>
                 <div class="p-3 bg-[#0E2F21] border border-emerald-500/30 rounded-xl">
-                  <span class="text-emerald-300 block text-[10px] uppercase font-bold">Net Wealth Gain</span>
+                  <span class="text-emerald-300 block text-[10px] uppercase font-bold" data-i18n="calc_col_net_gain">Net Wealth Gain</span>
                   <span id="calc-net-gain" class="font-bold text-emerald-400 text-sm">+ ₹0</span>
                   <span class="text-[10px] text-emerald-300/70 block">100% Tax-Free</span>
                 </div>
@@ -478,11 +519,11 @@
                   <div class="relative w-44 h-44">
                     <canvas id="returns-chart-canvas"></canvas>
                   </div>
-                  <span class="text-[11px] text-stone-400 mt-2 text-center">Investment vs. Wealth Gain</span>
+                  <span class="text-[11px] text-stone-400 mt-2 text-center" data-i18n="calc_chart_caption">Investment vs. Wealth Gain</span>
                 </div>
                 
                 <div class="sm:col-span-7 space-y-2">
-                  <h4 class="text-xs font-bold uppercase tracking-wider text-stone-300 mb-2">
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-stone-300 mb-2" data-i18n="calc_milestone_title">
                     Milestone Cashflows Over Time
                   </h4>
                   <div id="calc-timeline-container" class="max-h-44 overflow-y-auto pr-2 space-y-1 text-xs">
@@ -495,11 +536,11 @@
               <div class="mt-6 pt-5 border-t border-[#1B4232] flex flex-col sm:flex-row items-center gap-3">
                 <button id="wa-quote-btn" class="w-full sm:flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs py-3 px-4 rounded-xl shadow transition flex items-center justify-center space-x-2">
                   <i data-lucide="message-circle" class="w-4 h-4"></i>
-                  <span>Send Quotation To Pralhad on WhatsApp</span>
+                  <span data-i18n="calc_btn_wa">Send Quotation To Pralhad on WhatsApp</span>
                 </button>
                 <button id="print-quote-btn" class="w-full sm:w-auto bg-[#164232] hover:bg-[#1B523E] text-amber-200 font-bold text-xs py-3 px-4 rounded-xl transition flex items-center justify-center space-x-1.5 border border-amber-400/30">
                   <i data-lucide="printer" class="w-4 h-4 text-amber-300"></i>
-                  <span>Print Official Illustration</span>
+                  <span data-i18n="calc_btn_print">Print Official Illustration</span>
                 </button>
               </div>
             </div>
@@ -518,13 +559,13 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-14">
-          <span class="text-xs font-bold text-[#0C281E] uppercase tracking-widest bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200">
+          <span class="text-xs font-bold text-[#0C281E] uppercase tracking-widest bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200" data-i18n="pitch_tag">
             Why 25+ Crore Indian Families Trust LIC
           </span>
-          <h2 class="text-2xl sm:text-4xl font-black text-stone-900 mt-2">
+          <h2 class="text-2xl sm:text-4xl font-black text-stone-900 mt-2" data-i18n="pitch_title">
             The Truth: LIC vs. Bank Fixed Deposits vs. Mutual Funds
           </h2>
-          <p class="text-stone-600 text-sm mt-2">
+          <p class="text-stone-600 text-sm mt-2" data-i18n="pitch_desc">
             Clear, honest financial facts every policyholder must understand before investing.
           </p>
         </div>
@@ -537,15 +578,15 @@
               <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-900 flex items-center justify-center mb-4 border border-amber-200">
                 <i data-lucide="shield" class="w-6 h-6 text-amber-700"></i>
               </div>
-              <h3 class="text-lg font-bold text-stone-900">Section 37 Sovereign Guarantee</h3>
-              <p class="text-xs font-semibold text-amber-800 mt-1">Backed by the Central Government</p>
-              <p class="text-xs text-stone-600 mt-3 leading-relaxed">
-                Bank fixed deposits are insured only up to ₹5 Lakhs by DICGC. In contrast, <strong>under Section 37 of the LIC Act 1956, the Government of India guarantees every single rupee of your sum assured and declared bonuses</strong> in cash. Zero default risk.
+              <h3 class="text-lg font-bold text-stone-900" data-i18n="pitch_p1_title">Section 37 Sovereign Guarantee</h3>
+              <p class="text-xs font-semibold text-amber-800 mt-1" data-i18n="pitch_p1_sub">Backed by the Central Government</p>
+              <p class="text-xs text-stone-600 mt-3 leading-relaxed" data-i18n="pitch_p1_text">
+                Bank fixed deposits are insured only up to ₹5 Lakhs by DICGC. In contrast, under Section 37 of the LIC Act 1956, the Government of India guarantees every single rupee of your sum assured and declared bonuses in cash. Zero default risk.
               </p>
             </div>
             <div class="mt-6 pt-4 border-t border-stone-100 text-xs font-bold text-emerald-900 flex items-center">
               <i data-lucide="check" class="w-4 h-4 text-emerald-600 mr-1.5"></i>
-              100% Capital & Profit Protection
+              <span data-i18n="pitch_p1_badge">100% Capital & Profit Protection</span>
             </div>
           </div>
 
@@ -555,15 +596,15 @@
               <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-900 flex items-center justify-center mb-4 border border-emerald-200">
                 <i data-lucide="sparkles" class="w-6 h-6 text-emerald-700"></i>
               </div>
-              <h3 class="text-lg font-bold text-stone-900">Real Tax Freedom (80C & 10(10D))</h3>
-              <p class="text-xs font-semibold text-emerald-800 mt-1">Zero Tax on Death & Qualified Maturity</p>
-              <p class="text-xs text-stone-600 mt-3 leading-relaxed">
-                Bank FD interest is taxed at your income tax slab (up to 31.2%), reducing your real return to 4-5%. LIC policies give <strong>Section 80C deductions up to ₹1.5L, and death claims are 100% tax-free without ceiling</strong>. Maturity proceeds for policies with annual premium up to ₹5L are completely tax-free under Section 10(10D).
+              <h3 class="text-lg font-bold text-stone-900" data-i18n="pitch_p2_title">Real Tax Freedom (80C & 10(10D))</h3>
+              <p class="text-xs font-semibold text-emerald-800 mt-1" data-i18n="pitch_p2_sub">Zero Tax on Death & Qualified Maturity</p>
+              <p class="text-xs text-stone-600 mt-3 leading-relaxed" data-i18n="pitch_p2_text">
+                Bank FD interest is taxed at your income tax slab (up to 31.2%), reducing your real return to 4-5%. LIC policies give Section 80C deductions up to ₹1.5L, and death claims are 100% tax-free without ceiling. Maturity proceeds for policies with annual premium up to ₹5L are completely tax-free under Section 10(10D).
               </p>
             </div>
             <div class="mt-6 pt-4 border-t border-stone-100 text-xs font-bold text-emerald-900 flex items-center">
               <i data-lucide="check" class="w-4 h-4 text-emerald-600 mr-1.5"></i>
-              Keep 100% of Your Compounding Gains
+              <span data-i18n="pitch_p2_badge">Keep 100% of Your Compounding Gains</span>
             </div>
           </div>
 
@@ -573,15 +614,15 @@
               <div class="w-12 h-12 rounded-xl bg-stone-100 text-stone-900 flex items-center justify-center mb-4 border border-stone-300">
                 <i data-lucide="heart-handshake" class="w-6 h-6 text-stone-700"></i>
               </div>
-              <h3 class="text-lg font-bold text-stone-900">Day 1 Family Protection</h3>
-              <p class="text-xs font-semibold text-stone-700 mt-1">Human Life Value (HLV)</p>
-              <p class="text-xs text-stone-600 mt-3 leading-relaxed">
-                If you save ₹50,000 in a mutual fund or FD and pass away after 6 months, your family gets only what you deposited. <strong>In an LIC plan, paying just one installment immediately creates a ₹10,00,000+ safety net</strong> that ensures your children's education and family lifestyle continue uninterrupted.
+              <h3 class="text-lg font-bold text-stone-900" data-i18n="pitch_p3_title">Day 1 Family Protection</h3>
+              <p class="text-xs font-semibold text-stone-700 mt-1" data-i18n="pitch_p3_sub">Human Life Value (HLV)</p>
+              <p class="text-xs text-stone-600 mt-3 leading-relaxed" data-i18n="pitch_p3_text">
+                If you save ₹50,000 in a mutual fund or FD and pass away after 6 months, your family gets only what you deposited. In an LIC plan, paying just one installment immediately creates a ₹10,00,000+ safety net that ensures your children's education and family lifestyle continue uninterrupted.
               </p>
             </div>
             <div class="mt-6 pt-4 border-t border-stone-100 text-xs font-bold text-emerald-900 flex items-center">
               <i data-lucide="check" class="w-4 h-4 text-emerald-600 mr-1.5"></i>
-              Full Protection from Day 1
+              <span data-i18n="pitch_p3_badge">Full Protection from Day 1</span>
             </div>
           </div>
 
@@ -589,49 +630,53 @@
 
         <!-- Comparative Table Callout -->
         <div class="mt-12 bg-white border border-stone-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-          <h3 class="text-base font-extrabold text-[#0C281E] mb-4 text-center sm:text-left">
+          <h3 class="text-base font-extrabold text-[#0C281E] mb-4 text-center sm:text-left" data-i18n="comp_title">
             Honest Comparison: LIC of India vs. Bank Fixed Deposits vs. Mutual Funds
           </h3>
+          <div class="sm:hidden flex items-center space-x-1.5 text-stone-500 text-[11px] mb-2.5 font-medium">
+            <i data-lucide="arrow-left-right" class="w-3.5 h-3.5 text-amber-700"></i>
+            <span data-i18n="mobile_swipe_hint">Swipe left to compare all columns →</span>
+          </div>
           <div class="overflow-x-auto">
             <table class="w-full text-xs text-left">
               <thead>
                 <tr class="border-b border-stone-200 text-stone-700 font-bold uppercase tracking-wider text-[11px]">
-                  <th class="py-3 px-2">Key Factor</th>
-                  <th class="py-3 px-2 text-[#0C281E] font-black">LIC of India</th>
-                  <th class="py-3 px-2">Bank Fixed Deposits</th>
-                  <th class="py-3 px-2">Mutual Funds (SIP)</th>
+                  <th class="py-3 px-2" data-i18n="comp_col_feature">Key Factor</th>
+                  <th class="py-3 px-2 text-[#0C281E] font-black" data-i18n="comp_col_lic">LIC of India</th>
+                  <th class="py-3 px-2" data-i18n="comp_col_fd">Bank Fixed Deposits</th>
+                  <th class="py-3 px-2" data-i18n="comp_col_mf">Mutual Funds (SIP)</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-stone-100 text-stone-700 font-medium">
                 <tr>
-                  <td class="py-3 px-2 font-bold text-stone-900">Statutory Guarantee</td>
-                  <td class="py-3 px-2 font-bold text-emerald-800">100% Central Govt Sovereign Guarantee (Sec 37)</td>
-                  <td class="py-3 px-2 text-stone-600">Only up to ₹5 Lakhs (DICGC)</td>
-                  <td class="py-3 px-2 text-red-600">Zero Guarantee (Market Risk)</td>
+                  <td class="py-3 px-2 font-bold text-stone-900" data-i18n="comp_row1_feat">Statutory Guarantee</td>
+                  <td class="py-3 px-2 font-bold text-emerald-800" data-i18n="comp_row1_lic">100% Central Govt Sovereign Guarantee (Sec 37)</td>
+                  <td class="py-3 px-2 text-stone-600" data-i18n="comp_row1_fd">Only up to ₹5 Lakhs (DICGC)</td>
+                  <td class="py-3 px-2 text-red-600" data-i18n="comp_row1_mf">Zero Guarantee (Market Risk)</td>
                 </tr>
                 <tr>
-                  <td class="py-3 px-2 font-bold text-stone-900">Tax on Returns</td>
-                  <td class="py-3 px-2 font-bold text-emerald-800">100% Tax-Free (Sec 10(10D) up to limits)</td>
-                  <td class="py-3 px-2 text-red-600">Fully Taxed at Slab Rate (up to 31.2%)</td>
-                  <td class="py-3 px-2 text-red-600">Capital Gains Tax (12.5% LTCG)</td>
+                  <td class="py-3 px-2 font-bold text-stone-900" data-i18n="comp_row2_feat">Tax on Returns</td>
+                  <td class="py-3 px-2 font-bold text-emerald-800" data-i18n="comp_row2_lic">100% Tax-Free (Sec 10(10D) up to limits)</td>
+                  <td class="py-3 px-2 text-red-600" data-i18n="comp_row2_fd">Fully Taxed at Slab Rate (up to 31.2%)</td>
+                  <td class="py-3 px-2 text-red-600" data-i18n="comp_row2_mf">Capital Gains Tax (12.5% LTCG)</td>
                 </tr>
                 <tr>
-                  <td class="py-3 px-2 font-bold text-stone-900">Immediate Life Cover</td>
-                  <td class="py-3 px-2 font-bold text-emerald-800">Full Sum Assured active from Day 1</td>
-                  <td class="py-3 px-2 text-stone-600">Zero Life Cover</td>
-                  <td class="py-3 px-2 text-stone-600">Zero Life Cover</td>
+                  <td class="py-3 px-2 font-bold text-stone-900" data-i18n="comp_row3_feat">Immediate Life Cover</td>
+                  <td class="py-3 px-2 font-bold text-emerald-800" data-i18n="comp_row3_lic">Full Sum Assured active from Day 1</td>
+                  <td class="py-3 px-2 text-stone-600" data-i18n="comp_row3_fd">Zero Life Cover</td>
+                  <td class="py-3 px-2 text-stone-600" data-i18n="comp_row3_mf">Zero Life Cover</td>
                 </tr>
                 <tr>
-                  <td class="py-3 px-2 font-bold text-stone-900">Emergency Loan Facility</td>
-                  <td class="py-3 px-2 font-bold text-emerald-800">Up to 90% without CIBIL check</td>
-                  <td class="py-3 px-2 text-stone-600">Premature penalty / break FD</td>
-                  <td class="py-3 px-2 text-stone-600">Redemption taxes & market timing</td>
+                  <td class="py-3 px-2 font-bold text-stone-900" data-i18n="comp_row4_feat">Emergency Loan Facility</td>
+                  <td class="py-3 px-2 font-bold text-emerald-800" data-i18n="comp_row4_lic">Up to 90% without CIBIL check</td>
+                  <td class="py-3 px-2 text-stone-600" data-i18n="comp_row4_fd">Premature penalty / break FD</td>
+                  <td class="py-3 px-2 text-stone-600" data-i18n="comp_row4_mf">Redemption taxes & market timing</td>
                 </tr>
                 <tr>
-                  <td class="py-3 px-2 font-bold text-stone-900">Child Future Shield</td>
-                  <td class="py-3 px-2 font-bold text-emerald-800">Premiums waived & yearly stipend paid</td>
-                  <td class="py-3 px-2 text-stone-600">Deposits cease upon demise</td>
-                  <td class="py-3 px-2 text-stone-600">SIP stops immediately</td>
+                  <td class="py-3 px-2 font-bold text-stone-900" data-i18n="comp_row5_feat">Child Future Shield</td>
+                  <td class="py-3 px-2 font-bold text-emerald-800" data-i18n="comp_row5_lic">Premiums waived & yearly stipend paid</td>
+                  <td class="py-3 px-2 text-stone-600" data-i18n="comp_row5_fd">Deposits cease upon demise</td>
+                  <td class="py-3 px-2 text-stone-600" data-i18n="comp_row5_mf">SIP stops immediately</td>
                 </tr>
               </tbody>
             </table>
@@ -648,13 +693,13 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-8">
-          <span class="text-xs font-bold text-[#0C281E] uppercase tracking-widest bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200">
+          <span class="text-xs font-bold text-[#0C281E] uppercase tracking-widest bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200" data-i18n="catalog_tag">
             Official Policy Directory
           </span>
-          <h2 class="text-2xl sm:text-4xl font-black text-stone-900 mt-2">
+          <h2 class="text-2xl sm:text-4xl font-black text-stone-900 mt-2" data-i18n="catalog_title">
             All Currently Available LIC Plans
           </h2>
-          <p class="text-stone-600 text-sm mt-2">
+          <p class="text-stone-600 text-sm mt-2" data-i18n="catalog_desc">
             Click anywhere on any policy card to open complete official policy terms, eligibility parameters, death and maturity claim calculations.
           </p>
         </div>
@@ -666,6 +711,7 @@
               type="text" 
               id="plan-search-input" 
               placeholder="Search by plan name or table number (e.g. 936, Jeevan Labh, 871, Umang)..." 
+              data-i18n-placeholder="search_placeholder"
               class="w-full pl-11 pr-4 py-3.5 bg-white border border-stone-300 rounded-2xl text-sm font-medium shadow-sm focus:outline-none focus:border-[#0C281E] focus:ring-2 focus:ring-[#0C281E]/10 transition">
             <i data-lucide="search" class="w-5 h-5 text-stone-400 absolute left-4 top-4"></i>
           </div>
@@ -711,13 +757,13 @@
           </div>
 
           <div class="lg:col-span-7 space-y-5">
-            <span class="text-xs font-bold text-[#0C281E] uppercase tracking-widest bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200">
+            <span class="text-xs font-bold text-[#0C281E] uppercase tracking-widest bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200" data-i18n="about_tag">
               Your Dedicated Financial Partner
             </span>
-            <h2 class="text-2xl sm:text-3xl font-black text-stone-900">
+            <h2 class="text-2xl sm:text-3xl font-black text-stone-900" data-i18n="about_title">
               Meet Advisor Pralhad: 15+ Years of Service & 2,500+ Families Protected
             </h2>
-            <p class="text-sm text-stone-600 leading-relaxed">
+            <p class="text-sm text-stone-600 leading-relaxed" data-i18n="about_desc">
               Buying life insurance is a multi-decade relationship. Having a dedicated advisor ensures that your nominations stay updated, loan paperwork is handled in emergencies, and your family has a caring professional by their side during death or maturity claims.
             </p>
 
@@ -725,19 +771,19 @@
             <div class="grid sm:grid-cols-2 gap-3 pt-2 text-xs">
               <div class="p-3 bg-stone-50 border border-stone-200 rounded-xl flex items-start space-x-2">
                 <i data-lucide="home" class="w-4 h-4 text-emerald-800 shrink-0 mt-0.5"></i>
-                <span><strong>Free Doorstep Service:</strong> Proposal form filling, medical checkup arrangement, and document collection.</span>
+                <span><strong data-i18n="about_srv_1_title">Free Doorstep Service:</strong> <span data-i18n="about_srv_1_desc">Proposal form filling, medical checkup arrangement, and document collection.</span></span>
               </div>
               <div class="p-3 bg-stone-50 border border-stone-200 rounded-xl flex items-start space-x-2">
                 <i data-lucide="clock" class="w-4 h-4 text-emerald-800 shrink-0 mt-0.5"></i>
-                <span><strong>Hassle-Free Claims:</strong> Personal guidance and documentation support during maturity or death claims.</span>
+                <span><strong data-i18n="about_srv_2_title">Hassle-Free Claims:</strong> <span data-i18n="about_srv_2_desc">Personal guidance and documentation support during maturity or death claims.</span></span>
               </div>
               <div class="p-3 bg-stone-50 border border-stone-200 rounded-xl flex items-start space-x-2">
                 <i data-lucide="refresh-cw" class="w-4 h-4 text-emerald-800 shrink-0 mt-0.5"></i>
-                <span><strong>Policy Revival & Updates:</strong> Revival of lapsed policies, bank mandate setup, and address changes.</span>
+                <span><strong data-i18n="about_srv_3_title">Policy Revival & Updates:</strong> <span data-i18n="about_srv_3_desc">Revival of lapsed policies, bank mandate setup, and address changes.</span></span>
               </div>
               <div class="p-3 bg-stone-50 border border-stone-200 rounded-xl flex items-start space-x-2">
                 <i data-lucide="file-text" class="w-4 h-4 text-emerald-800 shrink-0 mt-0.5"></i>
-                <span><strong>Free Portfolio Review:</strong> Audit existing policies to ensure adequate family coverage and tax efficiency.</span>
+                <span><strong data-i18n="about_srv_4_title">Free Portfolio Review:</strong> <span data-i18n="about_srv_4_desc">Audit existing policies to ensure adequate family coverage and tax efficiency.</span></span>
               </div>
             </div>
 
@@ -750,7 +796,7 @@
             <div class="pt-2">
               <a href="#contact-section" class="inline-flex items-center space-x-2 bg-[#0C281E] hover:bg-[#164232] text-amber-200 text-xs font-bold py-3 px-6 rounded-xl shadow transition">
                 <i data-lucide="calendar" class="w-4 h-4 text-amber-300"></i>
-                <span>Book Free Consultation with Pralhad</span>
+                <span data-i18n="about_book_btn">Book Free Consultation with Pralhad</span>
               </a>
             </div>
           </div>
@@ -766,10 +812,10 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-12">
-          <span class="text-xs font-bold text-amber-900 uppercase tracking-widest bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+          <span class="text-xs font-bold text-amber-900 uppercase tracking-widest bg-amber-100 px-3 py-1 rounded-full border border-amber-300" data-i18n="test_tag">
             Real Stories of Peace of Mind
           </span>
-          <h2 class="text-2xl sm:text-3xl font-black text-stone-900 mt-2">
+          <h2 class="text-2xl sm:text-3xl font-black text-stone-900 mt-2" data-i18n="test_title">
             How Families Secured Their Financial Freedom
           </h2>
         </div>
@@ -833,13 +879,13 @@
         <div class="bg-gradient-to-br from-[#0C281E] to-[#071913] text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden border border-[#164232]">
           
           <div class="relative z-10 text-center max-w-2xl mx-auto mb-8">
-            <span class="text-xs font-bold text-amber-300 uppercase tracking-widest bg-amber-400/10 border border-amber-400/30 px-3 py-1 rounded-full">
+            <span class="text-xs font-bold text-amber-300 uppercase tracking-widest bg-amber-400/10 border border-amber-400/30 px-3 py-1 rounded-full" data-i18n="form_tag">
               Free Personalized Financial Advice
             </span>
-            <h2 class="text-2xl sm:text-3xl font-black text-white mt-2">
+            <h2 class="text-2xl sm:text-3xl font-black text-white mt-2" data-i18n="form_title">
               Ready to Protect Your Family's Financial Future?
             </h2>
-            <p class="text-stone-300 text-xs sm:text-sm mt-2">
+            <p class="text-stone-300 text-xs sm:text-sm mt-2" data-i18n="form_desc">
               Submit your details to receive an official benefit illustration on WhatsApp, or request a free doorstep visit by Advisor Pralhad.
             </p>
           </div>
@@ -847,26 +893,26 @@
           <form id="main-lead-form" class="relative z-10 space-y-4 max-w-2xl mx-auto text-xs">
             <div class="grid sm:grid-cols-2 gap-4">
               <div>
-                <label for="lead-name" class="block font-bold text-stone-300 uppercase tracking-wider mb-1">Your Full Name *</label>
+                <label for="lead-name" class="block font-bold text-stone-300 uppercase tracking-wider mb-1" data-i18n="form_lbl_name">Your Full Name *</label>
                 <input type="text" id="lead-name" required placeholder="e.g. Ramesh Patil" class="w-full bg-[#071913] border border-[#1B4232] rounded-xl px-4 py-3 text-white placeholder-stone-500 focus:outline-none focus:border-amber-400">
               </div>
               <div>
-                <label for="lead-phone" class="block font-bold text-stone-300 uppercase tracking-wider mb-1">WhatsApp / Phone Number *</label>
+                <label for="lead-phone" class="block font-bold text-stone-300 uppercase tracking-wider mb-1" data-i18n="form_lbl_phone">WhatsApp / Phone Number *</label>
                 <input type="tel" id="lead-phone" required placeholder="e.g. 9876543210" class="w-full bg-[#071913] border border-[#1B4232] rounded-xl px-4 py-3 text-white placeholder-stone-500 focus:outline-none focus:border-amber-400">
               </div>
             </div>
 
             <div class="grid sm:grid-cols-3 gap-4">
               <div>
-                <label for="lead-age" class="block font-bold text-stone-300 uppercase tracking-wider mb-1">Your Age</label>
+                <label for="lead-age" class="block font-bold text-stone-300 uppercase tracking-wider mb-1" data-i18n="form_lbl_age">Your Age</label>
                 <input type="number" id="lead-age" placeholder="e.g. 32" class="w-full bg-[#071913] border border-[#1B4232] rounded-xl px-4 py-3 text-white placeholder-stone-500 focus:outline-none focus:border-amber-400">
               </div>
               <div>
-                <label for="lead-city" class="block font-bold text-stone-300 uppercase tracking-wider mb-1">City / Location</label>
+                <label for="lead-city" class="block font-bold text-stone-300 uppercase tracking-wider mb-1" data-i18n="form_lbl_city">City / Location</label>
                 <input type="text" id="lead-city" placeholder="e.g. Pune, Mumbai" class="w-full bg-[#071913] border border-[#1B4232] rounded-xl px-4 py-3 text-white placeholder-stone-500 focus:outline-none focus:border-amber-400">
               </div>
               <div>
-                <label for="lead-budget" class="block font-bold text-stone-300 uppercase tracking-wider mb-1">Monthly Savings Budget</label>
+                <label for="lead-budget" class="block font-bold text-stone-300 uppercase tracking-wider mb-1" data-i18n="form_lbl_budget">Monthly Savings Budget</label>
                 <select id="lead-budget" class="w-full bg-[#071913] border border-[#1B4232] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-400">
                   <option value="₹2,000 - ₹5,000 / month">₹2,000 - ₹5,000 / mo</option>
                   <option value="₹5,000 - ₹10,000 / month" selected>₹5,000 - ₹10,000 / mo</option>
@@ -878,18 +924,18 @@
             </div>
 
             <div>
-              <label for="lead-plan" class="block font-bold text-stone-300 uppercase tracking-wider mb-1">Interested Policy or Financial Goal</label>
+              <label for="lead-plan" class="block font-bold text-stone-300 uppercase tracking-wider mb-1" data-i18n="form_lbl_plan">Interested Policy or Financial Goal</label>
               <input type="text" id="lead-plan" placeholder="e.g. Jeevan Labh (936) or Child Higher Education" class="w-full bg-[#071913] border border-[#1B4232] rounded-xl px-4 py-3 text-white placeholder-stone-500 focus:outline-none focus:border-amber-400">
             </div>
 
             <div class="pt-3">
               <button type="submit" class="w-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-stone-950 font-black text-sm py-4 px-6 rounded-2xl shadow-lg transition flex items-center justify-center space-x-2">
                 <i data-lucide="send" class="w-4 h-4"></i>
-                <span>Get Instant Quotation via WhatsApp & Book Doorstep Visit</span>
+                <span data-i18n="form_btn_submit">Get Instant Quotation via WhatsApp & Book Doorstep Visit</span>
               </button>
             </div>
 
-            <p class="text-center text-[11px] text-stone-400 pt-1">
+            <p class="text-center text-[11px] text-stone-400 pt-1" data-i18n="form_privacy">
               🔒 Your contact information is 100% confidential. No spam, guaranteed.
             </p>
           </form>
@@ -906,10 +952,10 @@
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center mb-12">
-          <span class="text-xs font-bold text-[#0C281E] uppercase tracking-widest bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200">
+          <span class="text-xs font-bold text-[#0C281E] uppercase tracking-widest bg-emerald-100/70 px-3 py-1 rounded-full border border-emerald-200" data-i18n="faq_tag">
             Frequently Asked Questions
           </span>
-          <h2 class="text-2xl sm:text-3xl font-black text-stone-900 mt-2">
+          <h2 class="text-2xl sm:text-3xl font-black text-stone-900 mt-2" data-i18n="faq_title">
             Clear, Verified Answers to Common LIC Questions
           </h2>
         </div>
@@ -918,10 +964,10 @@
           <!-- FAQ 1 -->
           <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
             <button class="faq-toggle-btn w-full text-left font-bold text-stone-900 text-sm flex justify-between items-center focus:outline-none">
-              <span>What is the Section 37 Sovereign Guarantee of LIC?</span>
+              <span data-i18n="faq_q1">What is the Section 37 Sovereign Guarantee of LIC?</span>
               <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-stone-400 transition transform"></i>
             </button>
-            <div class="faq-answer hidden mt-3 pt-3 border-t border-stone-100 text-stone-600 leading-relaxed">
+            <div class="faq-answer hidden mt-3 pt-3 border-t border-stone-100 text-stone-600 leading-relaxed" data-i18n="faq_a1">
               Under Section 37 of the Life Insurance Corporation Act 1956 passed by the Indian Parliament, the Sum Assured and all bonuses declared by LIC are legally guaranteed as to payment in cash by the Central Government of India. This statutory guarantee is unique to LIC and applies to every in-force policy.
             </div>
           </div>
@@ -929,23 +975,21 @@
           <!-- FAQ 2 -->
           <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
             <button class="faq-toggle-btn w-full text-left font-bold text-stone-900 text-sm flex justify-between items-center focus:outline-none">
-              <span>Are LIC policy maturity payouts really tax-free?</span>
+              <span data-i18n="faq_q2">Are LIC policy maturity payouts really tax-free?</span>
               <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-stone-400 transition transform"></i>
             </button>
-            <div class="faq-answer hidden mt-3 pt-3 border-t border-stone-100 text-stone-600 leading-relaxed">
-              Yes! Under Section 10(10D) of the Income Tax Act:
-              1. All death benefit claim payouts are <strong>100% tax-free with zero upper limit</strong>.
-              2. For policies issued after April 1, 2023, maturity proceeds are completely tax-free if the aggregate annual premium across non-ULIP life insurance policies does not exceed ₹5,00,000 per year.
+            <div class="faq-answer hidden mt-3 pt-3 border-t border-stone-100 text-stone-600 leading-relaxed" data-i18n="faq_a2">
+              Yes! Under Section 10(10D) of the Income Tax Act: 1. All death benefit claim payouts are 100% tax-free with zero upper limit. 2. For policies issued after April 1, 2023, maturity proceeds are completely tax-free if the aggregate annual premium across non-ULIP life insurance policies does not exceed ₹5,00,000 per year.
             </div>
           </div>
 
           <!-- FAQ 3 -->
           <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
             <button class="faq-toggle-btn w-full text-left font-bold text-stone-900 text-sm flex justify-between items-center focus:outline-none">
-              <span>Can I get a loan against my LIC policy during an emergency?</span>
+              <span data-i18n="faq_q3">Can I get a loan against my LIC policy during an emergency?</span>
               <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-stone-400 transition transform"></i>
             </button>
-            <div class="faq-answer hidden mt-3 pt-3 border-t border-stone-100 text-stone-600 leading-relaxed">
+            <div class="faq-answer hidden mt-3 pt-3 border-t border-stone-100 text-stone-600 leading-relaxed" data-i18n="faq_a3">
               Yes, all endowment and money-back policies qualify for a policy loan after 2 continuous years of premium payment. You can borrow up to 90% of the surrender value at competitive interest rates without any CIBIL score checks, and Advisor Pralhad can help arrange the disbursement within 48 to 72 hours.
             </div>
           </div>
@@ -953,10 +997,10 @@
           <!-- FAQ 4 -->
           <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
             <button class="faq-toggle-btn w-full text-left font-bold text-stone-900 text-sm flex justify-between items-center focus:outline-none">
-              <span>What happens if I miss paying a premium on the due date?</span>
+              <span data-i18n="faq_q4">What happens if I miss paying a premium on the due date?</span>
               <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-stone-400 transition transform"></i>
             </button>
-            <div class="faq-answer hidden mt-3 pt-3 border-t border-stone-100 text-stone-600 leading-relaxed">
+            <div class="faq-answer hidden mt-3 pt-3 border-t border-stone-100 text-stone-600 leading-relaxed" data-i18n="faq_a4">
               LIC provides a Grace Period of 30 days for yearly, half-yearly, and quarterly modes (and 15 days for monthly mode). During this grace period, full life risk cover remains active. Even if a policy lapses, it can easily be revived within 5 years with Advisor Pralhad's assistance.
             </div>
           </div>
@@ -964,10 +1008,10 @@
           <!-- FAQ 5 -->
           <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
             <button class="faq-toggle-btn w-full text-left font-bold text-stone-900 text-sm flex justify-between items-center focus:outline-none">
-              <span>What documents are required to purchase an LIC policy?</span>
+              <span data-i18n="faq_q5">What documents are required to purchase an LIC policy?</span>
               <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-stone-400 transition transform"></i>
             </button>
-            <div class="faq-answer hidden mt-3 pt-3 border-t border-stone-100 text-stone-600 leading-relaxed">
+            <div class="faq-answer hidden mt-3 pt-3 border-t border-stone-100 text-stone-600 leading-relaxed" data-i18n="faq_a5">
               Only standard KYC documents: 1. Aadhaar Card (Address Proof), 2. PAN Card (Identity Proof), 3. Passport size photo, 4. Bank Account Details / Cancelled Cheque (for direct credit of returns), and 5. Income proof (ITR / Salary Slip) for higher sum assured policies. Advisor Pralhad collects these right from your doorstep.
             </div>
           </div>
@@ -996,13 +1040,13 @@
             Authorized Life Insurance Corporation of India Advisory Practice. Dedicated to helping Indian families achieve financial independence, children's higher education, and secure retirement.
           </p>
           <p class="text-[11px] text-amber-300 font-semibold">
-            Agency Code: <span data-config="agencyCode">03458921</span>
+            <span data-i18n="footer_agency_code">Agency Code:</span> <span data-config="agencyCode">03458921</span>
           </p>
         </div>
 
         <!-- Col 2 -->
         <div>
-          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Popular LIC Plans</h4>
+          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3" data-i18n="footer_popular_title">Popular LIC Plans</h4>
           <ul class="space-y-1.5 text-[11px]">
             <li><a href="#plans-section" onclick="selectPlanInCalculator('936')" class="hover:text-amber-300 transition">LIC Jeevan Labh (936)</a></li>
             <li><a href="#plans-section" onclick="selectPlanInCalculator('871')" class="hover:text-amber-300 transition">LIC Jeevan Utsav (871)</a></li>
@@ -1015,38 +1059,38 @@
 
         <!-- Col 3 -->
         <div>
-          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Advisor Services</h4>
+          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3" data-i18n="footer_services_title">Advisor Services</h4>
           <ul class="space-y-1.5 text-[11px]">
-            <li>Free Doorstep KYC Pickup</li>
-            <li>Claim Settlement Guidance</li>
-            <li>Maturity Payout Processing</li>
-            <li>Policy Revival Assistance</li>
-            <li>Address & Nomination Changes</li>
-            <li>Annual Portfolio Review</li>
+            <li data-i18n="footer_srv_1">Free Doorstep KYC Pickup</li>
+            <li data-i18n="footer_srv_2">Claim Settlement Guidance</li>
+            <li data-i18n="footer_srv_3">Maturity Payout Processing</li>
+            <li data-i18n="footer_srv_4">Policy Revival Assistance</li>
+            <li data-i18n="footer_srv_5">Address & Nomination Changes</li>
+            <li data-i18n="footer_srv_6">Annual Portfolio Review</li>
           </ul>
         </div>
 
         <!-- Col 4 -->
         <div>
-          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Contact & Branch</h4>
+          <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3" data-i18n="footer_contact_title">Contact & Branch</h4>
           <p class="text-[11px] text-stone-200 font-bold" data-config="advisorFullName">Pralhad - Senior Advisor</p>
           <p class="text-[11px]" data-config="officeAddress">Office No. 104, LIC Advisory Center, Main Market Road</p>
           <p class="text-[11px]" data-config="branchName">Branch Office 883, Division I</p>
           <p class="text-[11px] mt-2 text-amber-300 font-bold">
-            Direct Phone: <a href="tel:+919876543210" class="advisor-call-link hover:underline" data-config="phone">+91 98765 43210</a>
+            <span data-i18n="footer_phone_lbl">Direct Phone:</span> <a href="tel:+919876543210" class="advisor-call-link hover:underline" data-config="phone">+91 98765 43210</a>
           </p>
           <p class="text-[11px] text-emerald-400 font-bold">
-            WhatsApp: <a href="https://wa.me/919876543210" target="_blank" class="advisor-wa-link hover:underline">+91 98765 43210</a>
+            <span data-i18n="footer_wa_lbl">WhatsApp:</span> <a href="https://wa.me/919876543210" target="_blank" class="advisor-wa-link hover:underline">+91 98765 43210</a>
           </p>
         </div>
       </div>
 
       <div class="pt-8 text-[11px] text-stone-500 space-y-2 text-center sm:text-left">
-        <p>
-          <strong>Statutory Disclosure:</strong> Insurance is the subject matter of solicitation. All policy features, premiums, and benefit illustrations shown are for educational and advisory guidance based on official LIC of India guidelines. With-profits bonuses depend on annual valuation surplus declarations.
+        <p data-i18n="footer_disclosure">
+          Statutory Disclosure: Insurance is the subject matter of solicitation. All policy features, premiums, and benefit illustrations shown are for educational and advisory guidance based on official LIC of India guidelines. With-profits bonuses depend on annual valuation surplus declarations.
         </p>
         <div class="flex flex-col sm:flex-row justify-between items-center pt-4 border-t border-[#164232] text-stone-500 gap-2">
-          <p>© 2026 Pralhad LIC Official Advisory. Backed by Section 37 of LIC Act 1956.</p>
+          <p data-i18n="footer_rights">© 2026 Pralhad LIC Official Advisory. Backed by Section 37 of LIC Act 1956.</p>
           <p>Hosted on GitHub Pages.</p>
         </div>
       </div>
@@ -1102,9 +1146,32 @@
   </div>
 
   <!-- ========================================== -->
-  <!-- 16. SCRIPTS INITIALIZATION                 -->
+  <!-- 16. MOBILE BOTTOM STICKY ACTION BAR        -->
+  <!-- ========================================== -->
+  <div class="fixed bottom-0 inset-x-0 z-40 bg-[#071913]/95 backdrop-blur-md border-t border-[#164232] px-3 py-2 sm:hidden flex items-center justify-between safe-area-bottom mobile-bottom-bar">
+    <a href="tel:+919876543210" class="advisor-call-link flex-1 flex flex-col items-center justify-center py-1 text-stone-300 hover:text-amber-300 transition">
+      <i data-lucide="phone" class="w-4 h-4 text-amber-400 mb-0.5"></i>
+      <span class="text-[10px] font-bold" data-i18n="mobile_bar_call">Call</span>
+    </a>
+    <a href="#calculator-section" class="flex-1 flex flex-col items-center justify-center py-1 text-stone-300 hover:text-amber-300 transition border-x border-[#164232]/80">
+      <i data-lucide="calculator" class="w-4 h-4 text-amber-300 mb-0.5"></i>
+      <span class="text-[10px] font-bold" data-i18n="mobile_bar_calc">Calculator</span>
+    </a>
+    <a href="#plans-section" class="flex-1 flex flex-col items-center justify-center py-1 text-stone-300 hover:text-amber-300 transition border-r border-[#164232]/80">
+      <i data-lucide="layers" class="w-4 h-4 text-emerald-400 mb-0.5"></i>
+      <span class="text-[10px] font-bold" data-i18n="mobile_bar_plans">Plans</span>
+    </a>
+    <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="advisor-wa-link flex-[1.4] flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white py-2 px-3 rounded-xl text-xs font-black shadow-md ml-2 space-x-1">
+      <i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>
+      <span class="text-[11px]" data-i18n="mobile_bar_wa">WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 17. SCRIPTS INITIALIZATION                 -->
   <!-- ========================================== -->
   <script src="config.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="data/plans.js"></script>
   <script src="js/calculator.js"></script>
   <script src="js/quotation.js"></script>
